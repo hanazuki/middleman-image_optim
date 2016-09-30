@@ -30,7 +30,7 @@ module Middleman
           if optimized_file
             reduction = optimized_file.original_size - optimized_file.size
             if reduction > 0
-              logger.debug "#{resource.path} reduced #{reduction / 1024}KB (#{'%.2f' % (100.0 * reduction / optimized_file.original_size)}%)"
+              logger.debug "#{resource.path} reduced by #{reduction / 1024}KB (#{'%.2f' % (100.0 * reduction / optimized_file.original_size)}%)"
               Middleman::Sitemap::Resource.new(app.sitemap, resource.path, optimized_file.to_s)
             end
           end or resource
